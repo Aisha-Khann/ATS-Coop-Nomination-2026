@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Co-op Experience</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <style>
+
+        /* ================================
+           GENERAL
+        ================================= */
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background: #e8eff7;
+            color: #181818;
+            font-family: Arial, sans-serif;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+
+       /* ================================
+          NAVBAR
+        ================================= */
+
+        .navbar {
+            background: #181818;
+            padding: 18px 0;
+        }
+
+        .navbar > .container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .navbar-nav {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+
+            display: flex !important;
+            flex-direction: row !important;
+            align-items: center;
+            gap: 35px;
+        }
+
+        .navbar-nav .nav-link {
+            color: #cfcfcf !important;
+            transition: 0.3s;
+            padding: 0;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white !important;
+        }
+
+
+        /* ================================
+        RESPONSIVE NAVBAR
+        ================================ */
+
+        @media (max-width: 1100px) {
+
+            .navbar > .container {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .navbar-nav {
+                position: static;
+                left: auto;
+                transform: none;
+
+                flex-direction: row !important;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                gap: 15px 25px;
+                width: 100%;
+            }
+
+            .navbar-brand {
+                margin-right: 0;
+            }
+
+        }
+
+
+
+        /* ================================
+           HERO
+        ================================= */
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background: #181818;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-label {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 7vw, 7rem);
+            font-weight: 700;
+            line-height: 0.95;
+            margin-bottom: 30px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #cfcfcf;
+            max-width: 650px;
+        }
+
+        .hero-meta {
+            margin-top: 50px;
+            display: flex;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-meta small {
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-meta p {
+            margin-top: 5px;
+            margin-bottom: 0;
+        }
+
+
+        /* ================================
+           SECTION HEADINGS
+        ================================= */
+
+        .section-number {
+            font-size: 14px;
+            color: #527ba5;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: 50px;
+        }
+
+        .section-intro {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 750px;
+            line-height: 1.7;
+        }
+
+
+        /* ================================
+           EXPERIENCE CARDS
+        ================================= */
+
+        .info-card {
+            background: #ffffff;
+            border: 1px solid #d2dfed;
+            padding: 35px;
+            height: 100%;
+            transition: 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .info-card-number {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 35px;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+
+        /* ================================
+           SKILLS
+        ================================= */
+
+        .skill {
+            border-top: 1px solid #ccc;
+            padding: 25px 0;
+        }
+
+        .skill-number {
+            color: #888;
+            font-size: 14px;
+        }
+
+        .skill h3 {
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        .skill p {
+            color: #666;
+            margin-top: 10px;
+            max-width: 600px;
+        }
+
+
+        /* ================================
+           TIMELINE
+        ================================= */
+
+        .timeline {
+            border-left: 2px solid #ccc;
+            padding-left: 35px;
+        }
+
+        .timeline-item {
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            background: #181818;
+            border-radius: 50%;
+            position: absolute;
+            left: -42px;
+            top: 7px;
+        }
+
+        .timeline-date {
+            color: #888;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .timeline-item h3 {
+            margin-top: 8px;
+        }
+
+
+        /* ================================
+           REFLECTION
+        ================================= */
+
+        .reflection {
+            background: #181818;
+            color: white;
+        }
+
+        .reflection .section-number {
+            color: #888;
+        }
+
+        .reflection-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            max-width: 900px;
+        }
+
+
+        /* ================================
+           QUOTE / HIGHLIGHT
+        ================================= */
+
+        .highlight {
+            border-left: 4px solid #181818;
+            padding-left: 30px;
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+
+
+        /* ================================
+           FOOTER
+        ================================= */
+
+        footer {
+            background: #181818;
+            color: #888;
+            padding: 30px 0;
+        }
+
+         /* ================================
+           IMAGE
+        ================================= */
+
+        .portfolio-photo {
+            width: 100%;
+            height: 700px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* LIFE AT ATS PHOTO GALLERY */
+
+        .workplace-gallery-large {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .workplace-gallery-small {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .workplace-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .workplace-gallery-large .workplace-photo {
+            aspect-ratio: 4 / 3;
+            height: auto;
+        }
+
+        .workplace-gallery-small .workplace-photo {
+            aspect-ratio: 1 / 1;
+            height: auto;
+        }
+
+        /* Mobile layout */
+        @media (max-width: 600px) {
+            .workplace-gallery-large,
+            .workplace-gallery-small {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .workplace-original-photos img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+
+        /* ==========================================
+        BEYOND THE WORKPLACE
+        =========================================== */
+
+        .community-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 35px 50px;
+            margin-bottom: 45px;
+        }
+
+        .community-item h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .community-item p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .community-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .community-gallery img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            border-radius: 8px;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .community-grid,
+            .community-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .community-date {
+            font-size: 13px;
+            font-weight: 500;
+            color: #527ba5;
+            margin-top: -5px;
+            margin-bottom: 12px;
+        }
+
+        
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     NAVBAR
+=========================================== -->
+
+<nav class="navbar sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">
+            HOME
+        </a>
+
+        <div id="navbarNav">
+
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">
+                        Experience
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#workplace">
+                        Life at ATS
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#technology">
+                        Technology
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#community">
+                        Beyond the Workplace
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#reflection">
+                        Reflection
+                    </a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#conclusions">
+                        Conclusions
+                    </a>
+                </li>
+
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- ==========================================
+     HERO
+=========================================== -->
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="hero-label">
+            FALL 2026 CO-OP STUDENT OF THE YEAR · NOMINATION PORTFOLIO
+        </div>
+
+        <h1>
+            My Co-op<br>
+            Journey.
+        </h1>
+
+        <p class="hero-subtitle">
+            An incredible journey at ATS,
+            highlighting my professional accomplishments,
+            personal growth, and contributions beyond the workplace.
+        </p>
+
+
+        <div class="hero-meta">
+
+            <div>
+                <small>Role</small>
+                <p>Toolset Software Developer</p>
+            </div>
+
+            <div>
+                <small>Company</small>
+                <p>ATS Automation</p>
+            </div>
+
+            <div>
+                <small>Term</small>
+                <p>S26 - F26</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<img src="atscooppicture.png" alt="Co-op Team Photo" class="portfolio-photo">
+
+
+<!-- ==========================================
+     EXPERIENCE
+=========================================== -->
+
+<section id="experience">
+
+    <div class="container">
+
+        <div class="section-number">
+            01 — THE EXPERIENCE
+        </div>
+
+        <h2 class="section-title">
+            Where I worked<br>
+            & what I did.
+        </h2>
+
+        <p class="section-intro mb-5">
+            This portfolio reflects on my co-op placement at ATS Corporation, spanning from May 2026 to
+            December 2026. The Fall 2026 term allowed me to build on my earlier experience, take greater 
+            ownership of my work, and continue contributing to meaningful projects,
+            all while growing both personally and professionally. From developing pricing and quoting solutions 
+            to supporting enterprise operations, my experience strengthened my 
+            confidence, independence, and appreciation for the impact of my work.
+            <br>
+            <br>
+        </p>
+
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <div class="info-card-number">
+                        01
+                    </div>
+
+                    <h3>
+                        My Role
+                    </h3>
+
+                    <p>
+                       During my eight-month placement, I worked as a Toolset Software Developer
+                       within ATS Corporation's Cambridge Life Sciences division. As part of the 
+                       Parts & Services department, I focused on developing and improving pricing 
+                       and quoting solutions, supporting enterprise resource planning (ERP) processes, 
+                       and resolving technical challenges. My role allowed me to apply my computer science 
+                       knowledge to real business operations while strengthening my skills in software development, 
+                       problem-solving, and data integrity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <div class="info-card-number">
+                        02
+                    </div>
+
+                    <h3>
+                        The Workplace
+                    </h3>
+
+                    <p>
+                        ATS Corporation is a global automation and technology company serving industries 
+                        including life sciences, food and beverage, transportation, energy, and consumer products. 
+                        I completed my placement within its Cambridge Life Sciences division, where the Parts & Services 
+                        department supports customer quoting, pricing, order management, and spare parts operations. 
+                        Working in this environment gave me valuable insight into how technical systems support business processes across different departments and international branches.
+                      
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <div class="info-card-number">
+                        03
+                    </div>
+
+                    <h3>
+                        My Work
+                    </h3>
+
+                    <p>
+                        My primary project involved developing and deploying an offline Excel-based pricing and quoting tool for the Parts & Services department, 
+                        replacing the previous Configure, Price, Quote (CPQ) system. I developed and tested formulas to automate gross margin, markup, and currency 
+                        conversion calculations across ten part classification categories for ATS Ohio and Cambridge Life Sciences. Beyond this project, I investigated 
+                        pricing discrepancies within JD Edwards (JDE), resolved formula issues, and created technical documentation to support colleagues in navigating 
+                        enterprise processes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     LIFE AT ATS
+=========================================== -->
+
+<section id="workplace" class="workplace">
+
+    <div class="container">
+
+        <div class="section-number">
+            02 — WORKPLACE
+        </div>
+
+        <h2 class="section-title">
+            Life at ATS
+        </h2>
+
+        <p class="section-intro mb-5">
+            Beyond my daily responsibilities, I made an effort to stay involved in the ATS 
+            workplace community despite working remotely. Through the ATS Social Club and events 
+            organized by the Co-op Committee, I had opportunities to connect with fellow co-op students 
+            and colleagues. From the Co-op Olympic Games and Thanksgiving lunch to a Blue Jays game and a 
+            Parts & Services bowling event, these experiences made my placement even more memorable.
+        </p>
+
+       
+        
+        <!-- FIRST PHOTO: ORIGINAL SIZE, STACKED -->
+
+        <div class="workplace-original-photos">
+
+            <img src="olympics1.jpg"
+                alt="ATS Co-op Olympic Games group photo">
+
+        </div>
+
+        <!-- SECOND ROW: THREE SMALLER PHOTOS -->
+        <div class="workplace-gallery-small">
+
+            <img src="bluejays.jpg"
+                alt="Toronto Blue Jays game with ATS Social Club"
+                class="workplace-photo">
+
+            <img src="olympics3.jpg"
+                alt="ATS Co-op Olympic Games group photo"
+                class="workplace-photo">
+
+            <img src="thanksgiving.jpg"
+                alt="ATS Co-op Committee Thanksgiving lunch"
+                class="workplace-photo">
+
+        </div>
+
+        <!-- THIRD ROW: ONE PHOTO -->
+        <div class="workplace-original-photos" style="margin-top: 25px;">
+                <img src="olympics2.jpg"
+                alt="ATS co-op students at the Olympic Games">
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     TECHNOLOGIES
+=========================================== -->
+
+<section id="technology">
+
+    <div class="container">
+
+        <div class="section-number">
+            03 — TECHNOLOGIES & SKILLS
+        </div>
+
+        <h2 class="section-title">
+            The Technology Behind<br>
+            It All.
+        </h2>
+
+        <p class="section-intro mb-5">
+            Throughout my placement, I gained hands-on experience
+            with enterprise systems, data analysis tools, and
+            documentation software. These technologies allowed
+            me to develop practical solutions, improve existing
+            processes, and communicate technical information
+            effectively.
+        </p>
+
+        <div class="row g-4">
+
+            <!-- CARD 01 -->
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <div class="info-card-number">
+                        01
+                    </div>
+
+                    <h3>Enterprise Systems & Automation</h3>
+
+                    <p>
+                        I worked with JD Edwards (JDE), CPQ, and
+                        Oracle-based applications to support
+                        pricing, quoting, and order management
+                        processes. I also explored Orchestrator
+                        Studio to develop workflows for
+                        notifications and approvals, gaining
+                        experience with enterprise systems
+                        from both a technical and operational
+                        perspective.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 02 -->
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <div class="info-card-number">
+                        02
+                    </div>
+
+                    <h3>Data & Analysis</h3>
+
+                    <p>
+                        I used Databricks to analyze order data
+                        and Excel to develop, test, and refine
+                        pricing formulas. My work involved
+                        automating calculations for gross margins,
+                        markups, currency conversions, and part
+                        classifications to support consistent
+                        quoting processes across ATS branches.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- CARD 03 -->
+            <div class="col-md-4">
+
+                <div class="info-card">
+
+                    <div class="info-card-number">
+                        03
+                    </div>
+
+                    <h3>Documentation & Communication</h3>
+
+                    <p>
+                        I used OneNote, Word, PowerPoint, and
+                        Snagit to create technical documentation,
+                        step-by-step tutorials, flowcharts,
+                        and visual guides. I also prepared
+                        demonstrations and presentations to
+                        explain my work, gather feedback,
+                        and help colleagues understand
+                        new pricing tools and processes.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     BEYOND THE WORKPLACE
+=========================================== -->
+
+<section id="community" class="community">
+
+    <div class="container">
+
+        <div class="section-number">
+            04 — COMMUNITY
+        </div>
+
+        <h2 class="section-title">
+            Beyond the Workplace
+        </h2>
+
+        <p class="section-intro mb-5">
+            Outside of my co-op placement, I continued
+            contributing to my community through volunteering,
+            supporting local initiatives, and maintaining
+            personal interests.
+        </p>
+
+        <!-- COMMUNITY INVOLVEMENT -->
+        <div class="community-grid">
+
+            <div class="community-item">
+                <h3>Volunteer Math Tutoring</h3>
+                <div class="community-date">
+                    September – November 2026
+                </div>
+                <p>
+                    Provided free weekly virtual math tutoring
+                    to high school and university students, helping 
+                    them strengthen their understanding and confidence 
+                    in subjects such as Functions and Calculus.
+                </p>
+            </div>
+
+            <div class="community-item">
+                <h3>Municipal Election Campaign</h3>
+                <div class="community-date">
+                    September – October 2026
+                </div>
+                <p>
+                    Supported local municipal election campaigns
+                    through community outreach, voting-day reminders,
+                    door-to-door canvassing, and organizing neighbourhood outreach
+                    data in Excel.
+                </p>
+            </div>
+
+            <div class="community-item">
+                <h3>Community Centre Volunteering</h3>
+                <div class="community-date">
+                    February – March 2026
+                </div>
+                <p>
+                    Volunteered with the Halton Islamic Community
+                    Centre during Ramadan, supporting community
+                    initiatives including carpool services,
+                    charity and donations, and Quran exchanges.
+                </p>
+            </div>
+
+            <div class="community-item">
+                <h3>Fitness & Personal Well-Being</h3>
+                <div class="community-date">
+                    July – December 2026
+                </div>
+                <p>
+                    Stayed active through strength training and
+                    group fitness classes at GoodLife Fitness,
+                    making time for personal interests alongside
+                    my academic and professional commitments.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- ELECTION DAY PHOTOS -->
+        <div class="community-gallery">
+
+            <img src="election1.jpg"
+                 alt="Participating in local municipal election activities">
+
+            <img src="election2.jpg"
+                 alt="With a municipal election candidate on voting day">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     REFLECTION
+=========================================== -->
+
+<section id="reflection" class="reflection">
+
+    <div class="container">
+
+        <div class="section-number">
+            05 — REFLECTION
+        </div>
+
+        <h2 class="section-title">
+            What I<br>
+            learned.
+        </h2>
+
+
+        <p class="reflection-text">
+            My eight-month co-op experience at ATS allowed me to grow
+            both technically and professionally while gaining a greater
+            sense of confidence in my abilities. One of the most rewarding
+            parts of my placement was seeing the pricing and quoting
+            solutions I developed become part of a system used by my team.
+            What began as an opportunity to apply my technical knowledge
+            became an experience in taking ownership of my work, solving
+            real business problems, and understanding the impact of my
+            contributions. Through presenting my ideas, receiving feedback,
+            and refining my solutions, I became more confident in my
+            ability to communicate, take initiative, and work independently.
+        </p>
+
+        <br><br>
+
+        <p class="reflection-text">
+            Beyond developing technical skills, this experience gave me
+            a deeper appreciation for the collaboration and problem-solving
+            involved in a professional workplace. Working with different
+            teams and business processes helped me understand how technology
+            supports operations across ATS. I also learned the importance
+            of adaptability, organization, and asking questions when
+            approaching unfamiliar challenges. Most importantly, my
+            placement showed me how much I enjoy contributing to meaningful
+            projects alongside supportive colleagues. I am grateful for
+            the opportunities, mentorship, and trust I received throughout
+            my time at ATS, and I will carry these lessons forward into
+            my remaining studies and future career.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     HIGHLIGHT
+=========================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="highlight">
+
+            I'd like to acknowledge my Supervisor Ama Al-Abassi and my Manager Natalia Arias 
+            for their repeated mentorship, guidance, and support througout my work terms.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     LOOKING AHEAD
+=========================================== -->
+
+<section id="conclusions" class="conclusions">
+
+    <div class="container">
+
+        <div class="section-number">
+            06 — CONCLUSIONS
+        </div>
+
+        <h2 class="section-title">
+            What's next?
+        </h2>
+
+        <p class="section-intro">
+            As I approach the completion of my Computer Science degree
+            at the University of Guelph, I look forward to applying the
+            knowledge, skills, and confidence I gained during my
+            time at ATS to new opportunities and
+            challenges. This experience has strengthened my interest
+            in developing practical solutions that make a meaningful
+            difference, and I hope to continue building on this
+            foundation as I begin my professional career.
+            <br><br>
+            I am especially grateful for the supportive environment
+            and opportunities I received at ATS, and I welcome the 
+            opportunity to return after graduation. Wherever my
+            career takes me, I will surely carry the lessons, relationships,
+            and experiences with me.
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     FOOTER
+=========================================== -->
+
+<footer>
+
+    <div class="container text-center">
+
+        <small>
+            © 2026 Aisha Khan · Co-op Experience
+        </small>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JavaScript -->
+<script src="js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
